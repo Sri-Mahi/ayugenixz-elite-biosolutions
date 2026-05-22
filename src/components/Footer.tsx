@@ -1,4 +1,12 @@
-import { Dna } from "lucide-react";
+import { Dna, ShieldCheck, BadgeCheck, FlaskConical, GraduationCap, Microscope } from "lucide-react";
+
+const badges = [
+  { icon: <BadgeCheck className="h-3.5 w-3.5" />, label: "Registered Establishment – Telangana" },
+  { icon: <ShieldCheck className="h-3.5 w-3.5" />, label: "UDYAM-TS-09-0181603" },
+  { icon: <FlaskConical className="h-3.5 w-3.5" />, label: "Bioinformatics" },
+  { icon: <Microscope className="h-3.5 w-3.5" />, label: "Genomics" },
+  { icon: <GraduationCap className="h-3.5 w-3.5" />, label: "Student Innovation" },
+];
 
 export function Footer() {
   return (
@@ -37,7 +45,19 @@ export function Footer() {
           ]} />
         </div>
 
-        <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-white/5 pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center">
+        <div className="mt-10 flex flex-wrap gap-2">
+          {badges.map((b) => (
+            <span
+              key={b.label}
+              className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[11px] text-foreground/85"
+            >
+              <span className="text-primary">{b.icon}</span>
+              {b.label}
+            </span>
+          ))}
+        </div>
+
+        <div className="mt-8 flex flex-col items-start justify-between gap-3 border-t border-white/5 pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center">
           <div>© {new Date().getFullYear()} Ayugenixz Bio Solutions. All rights reserved.</div>
           <div className="font-mono text-[11px] text-primary/80">Built with science · Crafted with care</div>
         </div>
