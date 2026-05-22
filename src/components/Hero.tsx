@@ -1,5 +1,6 @@
 import { BioBackground } from "./BioBackground";
 import { ArrowRight, GraduationCap, MessageCircle, Sparkles } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 export function Hero() {
   return (
@@ -24,19 +25,19 @@ export function Hero() {
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row animate-fade-up" style={{ animationDelay: "0.3s" }}>
-            <a
-              href="#services"
+            <Link
+              to="/services"
               className="group inline-flex h-12 items-center justify-center gap-2 rounded-full px-6 text-sm font-medium text-background transition hover:opacity-90"
               style={{ background: "var(--gradient-primary)", boxShadow: "var(--shadow-glow)" }}
             >
               Explore Services <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
-            </a>
-            <a
-              href="#internships"
+            </Link>
+            <Link
+              to="/internships"
               className="inline-flex h-12 items-center justify-center gap-2 rounded-full glass px-6 text-sm font-medium hover:bg-white/5"
             >
               <GraduationCap className="h-4 w-4 text-primary" /> Join Internship
-            </a>
+            </Link>
             <a
               href="https://wa.me/919391259003"
               target="_blank"

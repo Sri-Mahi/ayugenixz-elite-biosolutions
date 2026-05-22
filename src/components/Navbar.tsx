@@ -1,19 +1,31 @@
 import { useEffect, useState } from "react";
 import { ChevronDown, Menu, X, Dna } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 
 const services = [
-  { label: "Drug Design Services", href: "#service-drug" },
-  { label: "Protein Sequence Analysis", href: "#service-protein" },
-  { label: "Genome Editing", href: "#service-genome" },
-  { label: "NGS Variant Analysis", href: "#service-ngs" },
-  { label: "Cellular, Microbial & Molecular", href: "#service-cellular" },
-  { label: "Special Research Platforms", href: "#service-special" },
+  { label: "Drug Design Services", to: "/services", hash: "service-drug" },
+  { label: "Protein Sequence Analysis", to: "/services", hash: "service-protein" },
+  { label: "Genome Editing", to: "/services", hash: "service-genome" },
+  { label: "NGS Variant Analysis", to: "/services", hash: "service-ngs" },
+  { label: "Cellular, Microbial & Molecular", to: "/services", hash: "service-cellular" },
+  { label: "Special Research Platforms", to: "/services", hash: "service-special" },
 ];
 
 const trainings = [
-  { label: "Course 1: Specialized Biotech/Bioinformatics", href: "#course-1" },
-  { label: "Course 2: Advanced Research Module", href: "#course-2" },
+  { label: "Course 1: Specialized Biotech/Bioinformatics", to: "/training", hash: "course-1" },
+  { label: "Course 2: Advanced Research Module", to: "/training", hash: "course-2" },
+];
+
+const navItems: { label: string; to: string }[] = [
+  { label: "Home", to: "/" },
+  { label: "About", to: "/about" },
+  { label: "Internships", to: "/internships" },
+  { label: "Careers", to: "/careers" },
+  { label: "Research", to: "/research" },
+  { label: "Shield", to: "/shield" },
+  { label: "Memories", to: "/memories" },
+  { label: "Contact", to: "/contact" },
 ];
 
 export function Navbar() {
@@ -42,7 +54,7 @@ export function Navbar() {
         )}
         style={scrolled ? { boxShadow: "var(--shadow-elegant)" } : undefined}
       >
-        <a href="#home" className="flex items-center gap-2 py-2">
+        <Link to="/" className="flex items-center gap-2 py-2">
           <div className="relative grid h-9 w-9 place-items-center rounded-lg" style={{ background: "var(--gradient-primary)" }}>
             <Dna className="h-5 w-5 text-background" />
             <div className="absolute inset-0 rounded-lg blur-md opacity-60" style={{ background: "var(--gradient-primary)" }} />
@@ -51,13 +63,11 @@ export function Navbar() {
             <div className="font-display text-sm font-semibold tracking-tight">Ayugenixz</div>
             <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Elite All-in-One</div>
           </div>
-        </a>
+        </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex">
-          <NavLink href="#home">Home</NavLink>
-          <NavLink href="#internships">Internships</NavLink>
-          <NavLink href="#careers">Careers</NavLink>
-          <NavLink href="#about">About</NavLink>
+        <nav className="hidden items-center gap-0.5 lg:flex">
+          <NavItem to="/">Home</NavItem>
+          <NavItem to="/about">About</NavItem>
           <Dropdown
             label="Services"
             items={services}
@@ -72,18 +82,22 @@ export function Navbar() {
             onOpen={() => setOpenMenu("training")}
             onClose={() => setOpenMenu((m) => (m === "training" ? null : m))}
           />
-          <NavLink href="#signup">Sign Up</NavLink>
-          <NavLink href="#contact">Contact</NavLink>
+          <NavItem to="/internships">Internships</NavItem>
+          <NavItem to="/careers">Careers</NavItem>
+          <NavItem to="/research">Research</NavItem>
+          <NavItem to="/shield">Shield</NavItem>
+          <NavItem to="/memories">Memories</NavItem>
+          <NavItem to="/contact">Contact</NavItem>
         </nav>
 
         <div className="hidden lg:block">
-          <a
-            href="#signup"
+          <Link
+            to="/signup"
             className="inline-flex h-10 items-center justify-center rounded-full px-5 text-sm font-medium text-background transition hover:opacity-90"
             style={{ background: "var(--gradient-primary)", boxShadow: "var(--shadow-glow)" }}
           >
             Get Started
-          </a>
+          </Link>
         </div>
 
         <button
@@ -98,15 +112,15 @@ export function Navbar() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="mx-4 mt-3 lg:hidden">
-          <div className="glass-strong rounded-2xl p-4">
-            <MobileLink href="#home" onClick={() => setMobileOpen(false)}>Home</MobileLink>
-            <MobileLink href="#internships" onClick={() => setMobileOpen(false)}>Internships</MobileLink>
-            <MobileLink href="#careers" onClick={() => setMobileOpen(false)}>Careers</MobileLink>
-            <MobileLink href="#about" onClick={() => setMobileOpen(false)}>About</MobileLink>
+          <div className="glass-strong rounded-2xl p-4 max-h-[80vh] overflow-y-auto">
+            {navItems.map((n) => (
+              <MobileLink key={n.to} to={n.to} onClick={() => setMobileOpen(false)}>
+                {n.label}
+              </MobileLink>
+            ))}
             <MobileGroup label="Services" items={services} onPick={() => setMobileOpen(false)} />
             <MobileGroup label="Training" items={trainings} onPick={() => setMobileOpen(false)} />
-            <MobileLink href="#signup" onClick={() => setMobileOpen(false)}>Sign Up</MobileLink>
-            <MobileLink href="#contact" onClick={() => setMobileOpen(false)}>Contact</MobileLink>
+            <MobileLink to="/signup" onClick={() => setMobileOpen(false)}>Sign Up</MobileLink>
           </div>
         </div>
       )}
@@ -114,14 +128,16 @@ export function Navbar() {
   );
 }
 
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+function NavItem({ to, children }: { to: string; children: React.ReactNode }) {
   return (
-    <a
-      href={href}
+    <Link
+      to={to}
+      activeOptions={{ exact: to === "/" }}
+      activeProps={{ className: "bg-white/10 text-primary" }}
       className="rounded-full px-3 py-2 text-sm text-foreground/80 transition hover:bg-white/5 hover:text-foreground"
     >
       {children}
-    </a>
+    </Link>
   );
 }
 
@@ -133,17 +149,13 @@ function Dropdown({
   onClose,
 }: {
   label: string;
-  items: { label: string; href: string }[];
+  items: { label: string; to: string; hash: string }[];
   open: boolean;
   onOpen: () => void;
   onClose: () => void;
 }) {
   return (
-    <div
-      className="relative"
-      onMouseEnter={onOpen}
-      onMouseLeave={onClose}
-    >
+    <div className="relative" onMouseEnter={onOpen} onMouseLeave={onClose}>
       <button
         onClick={() => (open ? onClose() : onOpen())}
         className="inline-flex items-center gap-1 rounded-full px-3 py-2 text-sm text-foreground/80 transition hover:bg-white/5 hover:text-foreground"
@@ -154,14 +166,15 @@ function Dropdown({
         <div className="absolute left-1/2 top-full -translate-x-1/2 pt-3">
           <div className="glass-strong w-72 rounded-2xl p-2 border-gradient" style={{ boxShadow: "var(--shadow-elegant)" }}>
             {items.map((it) => (
-              <a
-                key={it.href}
-                href={it.href}
+              <Link
+                key={it.hash}
+                to={it.to}
+                hash={it.hash}
                 onClick={onClose}
                 className="block rounded-xl px-3 py-2 text-sm text-foreground/85 transition hover:bg-white/5 hover:text-primary"
               >
                 {it.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -170,11 +183,11 @@ function Dropdown({
   );
 }
 
-function MobileLink({ href, onClick, children }: { href: string; onClick: () => void; children: React.ReactNode }) {
+function MobileLink({ to, onClick, children }: { to: string; onClick: () => void; children: React.ReactNode }) {
   return (
-    <a href={href} onClick={onClick} className="block rounded-lg px-3 py-2.5 text-sm text-foreground/85 hover:bg-white/5">
+    <Link to={to} onClick={onClick} className="block rounded-lg px-3 py-2.5 text-sm text-foreground/85 hover:bg-white/5">
       {children}
-    </a>
+    </Link>
   );
 }
 
@@ -184,7 +197,7 @@ function MobileGroup({
   onPick,
 }: {
   label: string;
-  items: { label: string; href: string }[];
+  items: { label: string; to: string; hash: string }[];
   onPick: () => void;
 }) {
   const [open, setOpen] = useState(false);
@@ -200,14 +213,15 @@ function MobileGroup({
       {open && (
         <div className="ml-3 border-l border-white/10 pl-3">
           {items.map((it) => (
-            <a
-              key={it.href}
-              href={it.href}
+            <Link
+              key={it.hash}
+              to={it.to}
+              hash={it.hash}
               onClick={onPick}
               className="block rounded-lg px-3 py-2 text-xs text-foreground/75 hover:text-primary"
             >
               {it.label}
-            </a>
+            </Link>
           ))}
         </div>
       )}

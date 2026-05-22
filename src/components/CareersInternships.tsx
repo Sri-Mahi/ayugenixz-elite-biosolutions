@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { ArrowRight, Briefcase, GraduationCap } from "lucide-react";
 import { SectionHeader } from "./Founder";
 
@@ -31,9 +32,9 @@ export function Internships() {
           ))}
         </div>
         <div className="mt-10 text-center">
-          <a href="#signup" className="inline-flex h-12 items-center justify-center gap-2 rounded-full px-7 text-sm font-medium text-background" style={{ background: "var(--gradient-primary)", boxShadow: "var(--shadow-glow)" }}>
+          <Link to="/signup" className="inline-flex h-12 items-center justify-center gap-2 rounded-full px-7 text-sm font-medium text-background" style={{ background: "var(--gradient-primary)", boxShadow: "var(--shadow-glow)" }}>
             Apply for Internship <ArrowRight className="h-4 w-4" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>
@@ -57,14 +58,14 @@ export function Careers() {
                   <div className="mt-1 text-xs uppercase tracking-wider text-primary">{c.level}</div>
                 </div>
               </div>
-              <a href="#signup" className="hidden rounded-full bg-white/5 px-4 py-2 text-sm hover:bg-white/10 sm:inline-flex">Apply</a>
+              <Link to="/signup" className="hidden rounded-full bg-white/5 px-4 py-2 text-sm hover:bg-white/10 sm:inline-flex">Apply</Link>
             </div>
           ))}
         </div>
         <div className="mt-10 text-center">
-          <a href="#signup" className="inline-flex h-12 items-center justify-center gap-2 rounded-full glass px-7 text-sm font-medium">
+          <Link to="/signup" className="inline-flex h-12 items-center justify-center gap-2 rounded-full glass px-7 text-sm font-medium">
             Submit Interest <ArrowRight className="h-4 w-4 text-primary" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -2,6 +2,7 @@ import { SectionHeader } from "./Founder";
 import {
   Atom, Beaker, Dna, FlaskConical, Microscope, Network, Pill, Sparkles,
 } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 const services = [
   {
@@ -65,7 +66,7 @@ export function Services() {
             <article
               id={s.id}
               key={s.id}
-              className="group relative overflow-hidden rounded-3xl glass border-gradient p-6 transition hover:-translate-y-1"
+              className="group relative overflow-hidden rounded-3xl glass border-gradient p-6 transition hover:-translate-y-1 scroll-mt-32"
               style={{ animationDelay: `${i * 60}ms` }}
             >
               <div
@@ -90,32 +91,37 @@ export function Services() {
             </article>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
 
-        {/* Training */}
-        <div id="training" className="mt-24">
-          <SectionHeader eyebrow="Training Programs" title="Two flagship learning tracks" />
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
-            {[
-              { id: "course-1", title: "Specialized Biotech / Bioinformatics Module", tag: "Course 1", desc: "Foundational hands-on training in sequence analysis, biological databases, molecular biology techniques, and core bioinformatics tools.", topics: ["Sequence Analysis", "Biological Databases", "Python for Biology", "Mol-Bio Techniques"] },
-              { id: "course-2", title: "Advanced Research Module", tag: "Course 2", desc: "Project-based advanced training in NGS, drug design, structural bioinformatics, and publication-grade research execution.", topics: ["NGS Pipelines", "Docking & QSAR", "R for Genomics", "Manuscript Writing"] },
-            ].map((c) => (
-              <article key={c.id} id={c.id} className="glass-strong border-gradient relative overflow-hidden rounded-3xl p-7">
-                <div className="text-[11px] uppercase tracking-[0.2em] text-primary">{c.tag}</div>
-                <h3 className="mt-2 font-display text-2xl font-semibold">{c.title}</h3>
-                <p className="mt-3 text-sm text-muted-foreground">{c.desc}</p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {c.topics.map((t) => (
-                    <span key={t} className="inline-flex items-center gap-1.5 rounded-full bg-white/5 px-3 py-1 text-xs text-foreground/85">
-                      <Beaker className="h-3 w-3 text-primary" /> {t}
-                    </span>
-                  ))}
-                </div>
-                <a href="#signup" className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline">
-                  Enroll Now <FlaskConical className="h-4 w-4" />
-                </a>
-              </article>
-            ))}
-          </div>
+export function Training() {
+  return (
+    <section id="training" className="relative py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <SectionHeader eyebrow="Training Programs" title="Two flagship learning tracks" subtitle="Foundational to advanced — structured curricula designed by working scientists." />
+        <div className="mt-14 grid gap-5 md:grid-cols-2">
+          {[
+            { id: "course-1", title: "Specialized Biotech / Bioinformatics Module", tag: "Course 1", desc: "Foundational hands-on training in sequence analysis, biological databases, molecular biology techniques, and core bioinformatics tools.", topics: ["Sequence Analysis", "Biological Databases", "Python for Biology", "Mol-Bio Techniques"] },
+            { id: "course-2", title: "Advanced Research Module", tag: "Course 2", desc: "Project-based advanced training in NGS, drug design, structural bioinformatics, and publication-grade research execution.", topics: ["NGS Pipelines", "Docking & QSAR", "R for Genomics", "Manuscript Writing"] },
+          ].map((c) => (
+            <article key={c.id} id={c.id} className="glass-strong border-gradient relative overflow-hidden rounded-3xl p-7 scroll-mt-32">
+              <div className="text-[11px] uppercase tracking-[0.2em] text-primary">{c.tag}</div>
+              <h3 className="mt-2 font-display text-2xl font-semibold">{c.title}</h3>
+              <p className="mt-3 text-sm text-muted-foreground">{c.desc}</p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {c.topics.map((t) => (
+                  <span key={t} className="inline-flex items-center gap-1.5 rounded-full bg-white/5 px-3 py-1 text-xs text-foreground/85">
+                    <Beaker className="h-3 w-3 text-primary" /> {t}
+                  </span>
+                ))}
+              </div>
+              <Link to="/signup" className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline">
+                Enroll Now <FlaskConical className="h-4 w-4" />
+              </Link>
+            </article>
+          ))}
         </div>
       </div>
     </section>
