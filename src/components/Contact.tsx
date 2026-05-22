@@ -6,7 +6,7 @@ const links = [
   { icon: <Mail />, label: "Send Email", value: "ayugenixzbiosolutions@gmail.com", href: "mailto:ayugenixzbiosolutions@gmail.com" },
   { icon: <Globe />, label: "Visit Website", value: "www.ayugenixzbiosolutions.com", href: "https://www.ayugenixzbiosolutions.com" },
   { icon: <Youtube />, label: "Open YouTube", value: "@Ayugenixz", href: "https://youtube.com/@Ayugenixz" },
-  { icon: <Star />, label: "Reviews on Trustpilot", value: "Verified reviews", href: "https://www.trustpilot.com" },
+  { icon: <Star />, label: "Reviews on Trustpilot", value: "Coming soon — demo link", href: "https://www.trustpilot.com" },
 ];
 
 export function Contact() {

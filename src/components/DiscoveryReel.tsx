@@ -90,6 +90,7 @@ export function DiscoveryReel() {
   const [ndaOpen, setNdaOpen] = useState(false);
   const [accepted, setAccepted] = useState(false);
   const [agree, setAgree] = useState(false);
+  const [warn, setWarn] = useState(false);
 
   const loop = [...cards, ...cards];
 
@@ -103,8 +104,11 @@ export function DiscoveryReel() {
         />
       </div>
 
-      <div className="relative mt-12 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_8%,black_92%,transparent)]">
-        <div className="flex w-max gap-5 px-6 animate-marquee" style={{ animationDuration: "70s" }}>
+      <div className="group/reel relative mt-12 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_8%,black_92%,transparent)]">
+        <div
+          className="flex w-max gap-5 px-6 animate-marquee group-hover/reel:[animation-play-state:paused]"
+          style={{ animationDuration: "70s" }}
+        >
           {loop.map((c, i) => (
             <button
               key={`${c.id}-${i}`}
@@ -226,13 +230,25 @@ export function DiscoveryReel() {
             no proprietary or sensitive data is exposed.</p>
           </div>
           <label className="mt-4 flex cursor-pointer items-start gap-3 text-sm">
-            <input type="checkbox" checked={agree} onChange={(e) => setAgree(e.target.checked)} className="mt-1 h-4 w-4 accent-emerald-400" />
+            <input
+              type="checkbox"
+              checked={agree}
+              onChange={(e) => { setAgree(e.target.checked); if (e.target.checked) setWarn(false); }}
+              className="mt-1 h-4 w-4 accent-emerald-400"
+            />
             <span className="text-foreground/85">I agree not to copy, misuse, or redistribute student research content.</span>
           </label>
+          {warn && (
+            <div className="mt-3 rounded-lg border border-destructive/40 bg-destructive/10 px-3 py-2 text-xs text-destructive-foreground">
+              Please tick the checkbox to confirm before continuing.
+            </div>
+          )}
           <button
-            disabled={!agree}
-            onClick={() => { setAccepted(true); setNdaOpen(false); setAgree(false); }}
-            className="mt-5 inline-flex h-11 w-full items-center justify-center gap-2 rounded-full text-sm font-medium text-background disabled:opacity-40"
+            onClick={() => {
+              if (!agree) { setWarn(true); return; }
+              setAccepted(true); setNdaOpen(false); setAgree(false); setWarn(false);
+            }}
+            className="mt-5 inline-flex h-11 w-full items-center justify-center gap-2 rounded-full text-sm font-medium text-background"
             style={{ background: "var(--gradient-primary)", boxShadow: "var(--shadow-glow)" }}
           >
             Accept & Continue

@@ -1,4 +1,12 @@
-import { Dna } from "lucide-react";
+import { Dna, ShieldCheck, BadgeCheck, FlaskConical, GraduationCap, Microscope } from "lucide-react";
+
+const badges = [
+  { icon: <BadgeCheck className="h-3.5 w-3.5" />, label: "Registered Establishment – Telangana" },
+  { icon: <ShieldCheck className="h-3.5 w-3.5" />, label: "UDYAM-TS-09-0181603" },
+  { icon: <FlaskConical className="h-3.5 w-3.5" />, label: "Bioinformatics" },
+  { icon: <Microscope className="h-3.5 w-3.5" />, label: "Genomics" },
+  { icon: <GraduationCap className="h-3.5 w-3.5" />, label: "Student Innovation" },
+];
 
 export function Footer() {
   return (
