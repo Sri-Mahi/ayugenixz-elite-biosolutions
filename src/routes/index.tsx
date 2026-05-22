@@ -10,6 +10,8 @@ import { Careers, Internships } from "@/components/CareersInternships";
 import { SignUp } from "@/components/SignUp";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { PageLoader } from "@/components/PageLoader";
+import { Reveal } from "@/components/Reveal";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -31,18 +33,19 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="relative min-h-screen">
+      <PageLoader />
       <Navbar />
       <main>
         <Hero />
-        <Founder />
-        <Services />
-        <DiscoveryReel />
-        <Shield />
-        <Memories />
-        <Internships />
-        <Careers />
-        <SignUp />
-        <Contact />
+        <Reveal><Founder /></Reveal>
+        <Reveal><Services /></Reveal>
+        <Reveal><DiscoveryReel /></Reveal>
+        <Reveal><Shield /></Reveal>
+        <Reveal><Memories /></Reveal>
+        <Reveal><Internships /></Reveal>
+        <Reveal><Careers /></Reveal>
+        <Reveal><SignUp /></Reveal>
+        <Reveal><Contact /></Reveal>
       </main>
       <Footer />
     </div>
