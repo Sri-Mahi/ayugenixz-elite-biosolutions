@@ -45,7 +45,19 @@ export function Footer() {
           ]} />
         </div>
 
-        <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-white/5 pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center">
+        <div className="mt-10 flex flex-wrap gap-2">
+          {badges.map((b) => (
+            <span
+              key={b.label}
+              className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[11px] text-foreground/85"
+            >
+              <span className="text-primary">{b.icon}</span>
+              {b.label}
+            </span>
+          ))}
+        </div>
+
+        <div className="mt-8 flex flex-col items-start justify-between gap-3 border-t border-white/5 pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center">
           <div>© {new Date().getFullYear()} Ayugenixz Bio Solutions. All rights reserved.</div>
           <div className="font-mono text-[11px] text-primary/80">Built with science · Crafted with care</div>
         </div>
