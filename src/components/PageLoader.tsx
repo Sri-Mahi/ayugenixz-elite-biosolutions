@@ -24,7 +24,7 @@ export function PageLoader() {
       }`}
       style={{
         background:
-          "radial-gradient(ellipse at center, oklch(0.18 0.04 250) 0%, oklch(0.12 0.03 250) 70%)",
+          "radial-gradient(ellipse at center, oklch(0.99 0.005 220) 0%, oklch(0.94 0.03 210) 70%)",
       }}
     >
       <div className="flex flex-col items-center gap-5">
