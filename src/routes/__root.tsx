@@ -12,6 +12,7 @@ import appCss from "../styles.css?url";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PageLoader } from "@/components/PageLoader";
+import { AmbientScience } from "@/components/AmbientScience";
 
 function NotFoundComponent() {
   return (
