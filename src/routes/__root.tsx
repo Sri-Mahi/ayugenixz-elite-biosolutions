@@ -115,6 +115,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="relative min-h-screen">
+        <AmbientScience />
         <PageLoader />
         <Navbar />
         <main className="animate-fade-up">
