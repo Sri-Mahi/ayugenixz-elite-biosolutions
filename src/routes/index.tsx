@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "Ayugenixz — Smart Solutions for Complex Biology" },
       { name: "description", content: "Premium biotech & bioinformatics — services, internships, training, research." },
-      { property: "og:title", content: "Ayugenixz Elite All-in-One" },
+      { property: "og:title", content: "AYUGENIXZ" },
       { property: "og:description", content: "Smart Solutions for Complex Biology" },
     ],
   }),
