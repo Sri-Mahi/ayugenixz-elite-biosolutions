@@ -60,8 +60,8 @@ export function Navbar() {
             <div className="absolute inset-0 rounded-lg blur-md opacity-60" style={{ background: "var(--gradient-primary)" }} />
           </div>
           <div className="leading-tight">
-            <div className="font-display text-sm font-semibold tracking-tight">Ayugenixz</div>
-            <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Elite All-in-One</div>
+            <div className="font-display text-base font-semibold tracking-[0.18em]">AYUGENIXZ</div>
+            <div className="text-[10px] uppercase tracking-[0.18em] text-primary">Smart Solutions</div>
           </div>
         </Link>
 
