@@ -77,6 +77,7 @@ export function Navbar() {
             onOpen={() => setOpenMenu("services")}
             onClose={() => setOpenMenu((m) => (m === "services" ? null : m))}
           />
+          <NavItem to="/programs">Programs</NavItem>
           <Dropdown
             label="Training"
             items={trainings}
@@ -84,10 +85,10 @@ export function Navbar() {
             onOpen={() => setOpenMenu("training")}
             onClose={() => setOpenMenu((m) => (m === "training" ? null : m))}
           />
+          <NavItem to="/research">Research</NavItem>
+          <NavItem to="/history">History</NavItem>
           <NavItem to="/internships">Internships</NavItem>
           <NavItem to="/careers">Careers</NavItem>
-          <NavItem to="/research">Research</NavItem>
-          <NavItem to="/shield">Shield</NavItem>
           <NavItem to="/memories">Memories</NavItem>
           <NavItem to="/contact">Contact</NavItem>
         </nav>
