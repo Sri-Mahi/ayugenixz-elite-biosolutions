@@ -20,9 +20,11 @@ const trainings = [
 const navItems: { label: string; to: string }[] = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
+  { label: "Programs", to: "/programs" },
+  { label: "Research", to: "/research" },
+  { label: "History", to: "/history" },
   { label: "Internships", to: "/internships" },
   { label: "Careers", to: "/careers" },
-  { label: "Research", to: "/research" },
   { label: "Shield", to: "/shield" },
   { label: "Memories", to: "/memories" },
   { label: "Contact", to: "/contact" },
