@@ -217,7 +217,7 @@ export function DiscoveryReel() {
             </div>
             <div>
               <div className="font-display text-xl font-semibold">Non-Disclosure Agreement</div>
-              <div className="text-xs text-muted-foreground">Ayugenixz Elite · {UDYAM}</div>
+              <div className="text-xs text-muted-foreground">AYUGENIXZ · {UDYAM}</div>
             </div>
           </div>
           <div className="mt-5 max-h-56 overflow-auto rounded-xl bg-black/30 p-4 text-xs leading-relaxed text-foreground/85">
