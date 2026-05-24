@@ -2,13 +2,14 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Hero } from "@/components/Hero";
 import { BrandMarquee } from "@/components/Marquee";
 import { Reveal } from "@/components/Reveal";
+import { FutureOfCompBio, GlobalVision, ResearchEcosystem, StudentToScientist, WhyStandsOut } from "@/components/HomeSections";
 import { ArrowRight, Atom, Dna, FlaskConical, Microscope, ShieldCheck, Sparkles } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ayugenixz — Smart Solutions for Complex Biology" },
-      { name: "description", content: "Premium biotech & bioinformatics — services, internships, training, research." },
+      { title: "AYUGENIXZ — Smart Solutions for Complex Biology" },
+      { name: "description", content: "AYUGENIXZ — premium biotech & bioinformatics platform: programs, research, internships and training." },
       { property: "og:title", content: "AYUGENIXZ" },
       { property: "og:description", content: "Smart Solutions for Complex Biology" },
     ],
