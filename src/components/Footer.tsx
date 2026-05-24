@@ -22,7 +22,7 @@ export function Footer() {
                 <Dna className="h-5 w-5 text-background" />
               </div>
               <div>
-                <div className="font-display text-base font-semibold">Ayugenixz Elite All-in-One</div>
+                <div className="font-display text-lg font-semibold tracking-[0.18em]">AYUGENIXZ</div>
                 <div className="text-[11px] uppercase tracking-[0.18em] text-primary">Smart Solutions for Complex Biology</div>
               </div>
             </div>
