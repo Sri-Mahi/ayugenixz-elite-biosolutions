@@ -42,17 +42,19 @@ export function Footer() {
             { l: "Home", to: "/" },
             { l: "About", to: "/about" },
             { l: "Services", to: "/services" },
+            { l: "Programs", to: "/programs" },
             { l: "Training", to: "/training" },
-            { l: "Research", to: "/research" },
           ]} />
           <FooterCol title="Engage" items={[
+            { l: "Research", to: "/research" },
             { l: "Internships", to: "/internships" },
             { l: "Careers", to: "/careers" },
             { l: "Sign Up", to: "/signup" },
             { l: "Contact", to: "/contact" },
-            { l: "Innovator's Shield", to: "/shield" },
           ]} />
           <FooterCol title="More" items={[
+            { l: "History", to: "/history" },
+            { l: "Innovator's Shield", to: "/shield" },
             { l: "Memories", to: "/memories" },
           ]} />
         </div>
