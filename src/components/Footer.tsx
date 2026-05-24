@@ -55,7 +55,7 @@ export function Footer() {
           <FooterCol title="More" items={[
             { l: "History", to: "/history" },
             { l: "Innovator's Shield", to: "/shield" },
-            { l: "Memories", to: "/memories" },
+            { l: "Gallery", to: "/gallery" },
           ]} />
         </div>
 
