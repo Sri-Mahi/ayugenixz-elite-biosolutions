@@ -1,4 +1,5 @@
 import { Award, BookOpen, FlaskConical, GraduationCap, Microscope, Users } from "lucide-react";
+import founderImage from "@/assets/logo.png";
 
 export function Founder() {
   return (
@@ -10,8 +11,10 @@ export function Founder() {
           {/* Portrait card */}
           <div className="glass-strong border-gradient relative overflow-hidden rounded-3xl p-8" style={{ boxShadow: "var(--shadow-elegant)" }}>
             <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full opacity-40 blur-3xl" style={{ background: "var(--gradient-primary)" }} />
-            <div className="relative mx-auto grid h-44 w-44 place-items-center overflow-hidden rounded-full" style={{ background: "var(--gradient-primary)", boxShadow: "var(--shadow-glow)" }}>
-              <span className="font-display text-5xl font-semibold text-background">JS</span>
+            <div className="relative mx-auto h-44 w-44 overflow-hidden rounded-full border-2 border-primary/20" style={{ boxShadow: "var(--shadow-glow)" }}>                            quota
+                  <img src={founderImage} 
+                       alt="Dr. J. Saraswathi" 
+                       className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"/>
             </div>
             <div className="relative mt-6 text-center">
               <div className="font-display text-2xl font-semibold">Dr. J. Saraswathi</div>
