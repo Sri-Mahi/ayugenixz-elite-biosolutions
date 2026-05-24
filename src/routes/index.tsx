@@ -2,8 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Hero } from "@/components/Hero";
 import { BrandMarquee } from "@/components/Marquee";
 import { Reveal } from "@/components/Reveal";
-import { FutureOfCompBio, GlobalVision, ResearchEcosystem, StudentToScientist, WhyStandsOut } from "@/components/HomeSections";
-import { ArrowRight, Atom, Dna, FlaskConical, Microscope, ShieldCheck, Sparkles } from "lucide-react";
+import { GlobalVision, StudentToScientist, WhyStandsOut } from "@/components/HomeSections";
+import { ArrowRight, Atom, Dna, FlaskConical, Microscope, ShieldCheck, Sparkles, GraduationCap } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -18,12 +18,12 @@ export const Route = createFileRoute("/")({
 });
 
 const highlights = [
-  { to: "/services", icon: <FlaskConical />, t: "Services", d: "Drug design, NGS, CRISPR, protein analysis." },
-  { to: "/about", icon: <Atom />, t: "Founder", d: "Dr. J. Saraswathi — Ph.D. Genetics, 8+ yrs research." },
-  { to: "/research", icon: <Dna />, t: "Research Reel", d: "Student research showcase with NDA gate." },
-  { to: "/shield", icon: <ShieldCheck />, t: "Innovator's Shield", d: "Watermarking, vaults, patent docs." },
-  { to: "/internships", icon: <Microscope />, t: "Internships", d: "Real-world bioinformatics & wet lab tracks." },
-  { to: "/memories", icon: <Sparkles />, t: "Memories", d: "Conferences, labs and milestones." },
+  { to: "/research", icon: <Dna />, t: "Genomics", d: "Study of an organism's complete set of DNA." },
+  { to: "/services", icon: <Microscope />, t: "NGS Analysis", d: "High-throughput sequencing data analysis." },
+  { to: "/services", icon: <FlaskConical />, t: "Drug Discovery", d: "Identification of potential therapeutic agents." },
+  { to: "/services", icon: <Atom />, t: "Protein Analysis", d: "Characterization of protein structure and function." },
+  { to: "/training", icon: <GraduationCap />, t: "Bioinformatics Training", d: "Skill development in computational biology." },
+  { to: "/services", icon: <Sparkles />, t: "Biotechnology Services", d: "Diverse solutions leveraging biological systems." },
 ];
 
 function HomePage() {
@@ -69,8 +69,6 @@ function HomePage() {
       </section>
 
       <StudentToScientist />
-      <ResearchEcosystem />
-      <FutureOfCompBio />
     </>
   );
 }

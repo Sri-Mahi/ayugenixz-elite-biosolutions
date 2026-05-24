@@ -72,73 +72,29 @@ export function GlobalVision() {
   return (
     <section className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_1fr]">
-          <Reveal>
-            <div>
-              <Eyebrow>Global Research Vision</Eyebrow>
-              <h2 className="mt-4 font-display text-3xl font-semibold leading-tight sm:text-5xl">
-                Building India's <span className="text-gradient">next-gen bioinformatics</span> ecosystem
-              </h2>
-              <p className="mt-5 text-base text-muted-foreground sm:text-lg">
-                AYUGENIXZ bridges classroom biology and frontier life-science research — preparing
-                students, interns and early scientists to contribute to genomics, computational biology
-                and translational medicine at international standards.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {["Genomics", "Bioinformatics", "AI for Biology", "Drug Discovery", "Translational Research"].map((t) => (
-                  <span key={t} className="rounded-full bg-white/5 px-3 py-1 text-xs text-foreground/80">{t}</span>
-                ))}
-              </div>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <Link to="/programs" className="inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-medium text-background" style={{ background: "var(--gradient-primary)", boxShadow: "var(--shadow-glow)" }}>
-                  Explore Programs
-                </Link>
-                <Link to="/research" className="inline-flex h-11 items-center justify-center rounded-full glass px-5 text-sm font-medium">
-                  See Research Tracks
-                </Link>
-              </div>
+        <Reveal>
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="font-display text-3xl font-semibold leading-tight sm:text-5xl">
+              Advanced Bioinformatics & Biotechnology Solutions
+            </h2>
+            <p className="mt-5 text-base text-muted-foreground sm:text-lg">
+              AYUGENIXZ provides bioinformatics research services, genomics analysis, drug discovery support, and biotech training.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              {["Genomics", "NGS Analysis", "Drug Discovery", "Protein Analysis", "Bioinformatics Training", "Biotechnology Services"].map((t) => (
+                <span key={t} className="rounded-full bg-white/5 px-4 py-1.5 text-sm text-foreground/80">{t}</span>
+              ))}
             </div>
-          </Reveal>
-          <Reveal delay={120}>
-            <div className="relative">
-              <div className="absolute -inset-6 rounded-[2.5rem] opacity-50 blur-2xl" style={{ background: "var(--gradient-aurora)" }} />
-              <div className="relative glass-strong border-gradient rounded-3xl p-6">
-                <div className="flex items-center justify-between">
-                  <div className="text-[11px] uppercase tracking-[0.2em] text-primary">Pipeline Console</div>
-                  <div className="flex gap-1.5">
-                    <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse-glow" />
-                    <span className="h-2 w-2 rounded-full bg-cyan-400" />
-                    <span className="h-2 w-2 rounded-full bg-violet-400" />
-                  </div>
-                </div>
-                <pre className="mt-4 overflow-x-auto rounded-xl bg-black/60 p-4 font-mono text-[11px] leading-relaxed" style={{ color: "oklch(0.88 0.13 165)" }}>
-{`> ngs-pipeline --sample S07 --ref GRCh38
-  [ok] trim_galore         (12.3s)
-  [ok] bwa-mem align       (1m04)
-  [ok] mark_duplicates     (18.2s)
-  [ok] mutect2 call        (2m11)
-  [ok] vep annotate        (44.7s)
-> docking --target EGFR --library phyto.smi
-  [ok] prepare ligands     (8.9s)
-  [ok] vina dock x256      (3m02)
-  [hit] ΔG = -9.41 kcal/mol  scaffold:#A12`}
-                </pre>
-                <div className="mt-4 grid grid-cols-3 gap-3 text-center">
-                  {[
-                    { k: "12", v: "Pipelines" },
-                    { k: "200+", v: "Datasets" },
-                    { k: "24/7", v: "Mentorship" },
-                  ].map((s) => (
-                    <div key={s.v} className="rounded-xl bg-white/5 py-3">
-                      <div className="text-gradient font-display text-xl font-bold">{s.k}</div>
-                      <div className="text-[10px] uppercase tracking-wider text-muted-foreground">{s.v}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
+              <Link to="/programs" className="inline-flex h-11 items-center justify-center rounded-full px-6 text-sm font-medium text-background" style={{ background: "var(--gradient-primary)", boxShadow: "var(--shadow-glow)" }}>
+                Explore Programs
+              </Link>
+              <Link to="/services" className="inline-flex h-11 items-center justify-center rounded-full glass px-6 text-sm font-medium">
+                Our Services
+              </Link>
             </div>
-          </Reveal>
-        </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
