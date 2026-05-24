@@ -12,4 +12,9 @@ export default defineConfig({
   tanstackStart: {
     server: { entry: "server" },
   },
+  vite: {
+       server: {
+       allowedHosts: ["ayugenixz-biosolutions.onrender.com"],
+       },
+  },
 });
