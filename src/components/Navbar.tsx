@@ -20,9 +20,11 @@ const trainings = [
 const navItems: { label: string; to: string }[] = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
+  { label: "Programs", to: "/programs" },
+  { label: "Research", to: "/research" },
+  { label: "History", to: "/history" },
   { label: "Internships", to: "/internships" },
   { label: "Careers", to: "/careers" },
-  { label: "Research", to: "/research" },
   { label: "Shield", to: "/shield" },
   { label: "Memories", to: "/memories" },
   { label: "Contact", to: "/contact" },
@@ -60,8 +62,8 @@ export function Navbar() {
             <div className="absolute inset-0 rounded-lg blur-md opacity-60" style={{ background: "var(--gradient-primary)" }} />
           </div>
           <div className="leading-tight">
-            <div className="font-display text-sm font-semibold tracking-tight">Ayugenixz</div>
-            <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Elite All-in-One</div>
+            <div className="font-display text-base font-semibold tracking-[0.18em]">AYUGENIXZ</div>
+            <div className="text-[10px] uppercase tracking-[0.18em] text-primary">Smart Solutions</div>
           </div>
         </Link>
 
@@ -75,6 +77,7 @@ export function Navbar() {
             onOpen={() => setOpenMenu("services")}
             onClose={() => setOpenMenu((m) => (m === "services" ? null : m))}
           />
+          <NavItem to="/programs">Programs</NavItem>
           <Dropdown
             label="Training"
             items={trainings}
@@ -82,10 +85,10 @@ export function Navbar() {
             onOpen={() => setOpenMenu("training")}
             onClose={() => setOpenMenu((m) => (m === "training" ? null : m))}
           />
+          <NavItem to="/research">Research</NavItem>
+          <NavItem to="/history">History</NavItem>
           <NavItem to="/internships">Internships</NavItem>
           <NavItem to="/careers">Careers</NavItem>
-          <NavItem to="/research">Research</NavItem>
-          <NavItem to="/shield">Shield</NavItem>
           <NavItem to="/memories">Memories</NavItem>
           <NavItem to="/contact">Contact</NavItem>
         </nav>

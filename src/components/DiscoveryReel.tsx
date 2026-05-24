@@ -217,12 +217,12 @@ export function DiscoveryReel() {
             </div>
             <div>
               <div className="font-display text-xl font-semibold">Non-Disclosure Agreement</div>
-              <div className="text-xs text-muted-foreground">Ayugenixz Elite · {UDYAM}</div>
+              <div className="text-xs text-muted-foreground">AYUGENIXZ · {UDYAM}</div>
             </div>
           </div>
           <div className="mt-5 max-h-56 overflow-auto rounded-xl bg-black/30 p-4 text-xs leading-relaxed text-foreground/85">
             <p>By accepting this agreement, you acknowledge that the research content shown is the
-            intellectual property of the student researcher and Ayugenixz Elite. You agree not to copy,
+            intellectual property of the student researcher and AYUGENIXZ. You agree not to copy,
             reproduce, redistribute, share, screenshot, or commercially use any portion of this research
             without explicit written consent.</p>
             <p className="mt-3">Violation of this NDA may result in legal action under applicable

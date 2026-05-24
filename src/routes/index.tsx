@@ -2,14 +2,15 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Hero } from "@/components/Hero";
 import { BrandMarquee } from "@/components/Marquee";
 import { Reveal } from "@/components/Reveal";
+import { FutureOfCompBio, GlobalVision, ResearchEcosystem, StudentToScientist, WhyStandsOut } from "@/components/HomeSections";
 import { ArrowRight, Atom, Dna, FlaskConical, Microscope, ShieldCheck, Sparkles } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ayugenixz — Smart Solutions for Complex Biology" },
-      { name: "description", content: "Premium biotech & bioinformatics — services, internships, training, research." },
-      { property: "og:title", content: "Ayugenixz Elite All-in-One" },
+      { title: "AYUGENIXZ — Smart Solutions for Complex Biology" },
+      { name: "description", content: "AYUGENIXZ — premium biotech & bioinformatics platform: programs, research, internships and training." },
+      { property: "og:title", content: "AYUGENIXZ" },
       { property: "og:description", content: "Smart Solutions for Complex Biology" },
     ],
   }),
@@ -30,16 +31,20 @@ function HomePage() {
     <>
       <Hero />
       <BrandMarquee direction="left" />
+
+      <WhyStandsOut />
+      <GlobalVision />
+
       <section className="relative py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <Reveal>
             <div className="mx-auto max-w-3xl text-center">
-              <div className="inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-primary">
+              <div className="inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-primary">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse-glow" /> Explore the platform
               </div>
-              <h2 className="mt-4 font-display text-3xl font-semibold sm:text-5xl">One platform · Six disciplines</h2>
+              <h2 className="mt-4 font-display text-3xl font-semibold sm:text-5xl">Advanced bioinformatics, one ecosystem</h2>
               <p className="mt-4 text-base text-muted-foreground sm:text-lg">
-                Navigate the entire Ayugenixz ecosystem — pick a track and dive in.
+                Navigate the entire AYUGENIXZ platform — pick a track and dive into real science.
               </p>
             </div>
           </Reveal>
@@ -62,6 +67,11 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      <StudentToScientist />
+      <ResearchEcosystem />
+      <FutureOfCompBio />
     </>
   );
 }
+

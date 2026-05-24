@@ -76,9 +76,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Ayugenixz Elite All-in-One — Smart Solutions for Complex Biology" },
-      { name: "description", content: "Premium biotech & bioinformatics services, internships, and training. UDYAM-TS-09-0181603." },
-      { property: "og:title", content: "Ayugenixz Elite All-in-One" },
+      { title: "AYUGENIXZ — Smart Solutions for Complex Biology" },
+      { name: "description", content: "AYUGENIXZ — advanced biotechnology, bioinformatics, genomics, NGS, molecular docking, research mentorship & training. UDYAM-TS-09-0181603." },
+      { property: "og:title", content: "AYUGENIXZ" },
       { property: "og:description", content: "Smart Solutions for Complex Biology" },
       { property: "og:type", content: "website" },
     ],

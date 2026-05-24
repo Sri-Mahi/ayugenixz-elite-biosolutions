@@ -14,8 +14,10 @@ import { Route as SignupRouteImport } from './routes/signup'
 import { Route as ShieldRouteImport } from './routes/shield'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ResearchRouteImport } from './routes/research'
+import { Route as ProgramsRouteImport } from './routes/programs'
 import { Route as MemoriesRouteImport } from './routes/memories'
 import { Route as InternshipsRouteImport } from './routes/internships'
+import { Route as HistoryRouteImport } from './routes/history'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as AboutRouteImport } from './routes/about'
@@ -46,6 +48,11 @@ const ResearchRoute = ResearchRouteImport.update({
   path: '/research',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProgramsRoute = ProgramsRouteImport.update({
+  id: '/programs',
+  path: '/programs',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MemoriesRoute = MemoriesRouteImport.update({
   id: '/memories',
   path: '/memories',
@@ -54,6 +61,11 @@ const MemoriesRoute = MemoriesRouteImport.update({
 const InternshipsRoute = InternshipsRouteImport.update({
   id: '/internships',
   path: '/internships',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HistoryRoute = HistoryRouteImport.update({
+  id: '/history',
+  path: '/history',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -82,8 +94,10 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
+  '/history': typeof HistoryRoute
   '/internships': typeof InternshipsRoute
   '/memories': typeof MemoriesRoute
+  '/programs': typeof ProgramsRoute
   '/research': typeof ResearchRoute
   '/services': typeof ServicesRoute
   '/shield': typeof ShieldRoute
@@ -95,8 +109,10 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
+  '/history': typeof HistoryRoute
   '/internships': typeof InternshipsRoute
   '/memories': typeof MemoriesRoute
+  '/programs': typeof ProgramsRoute
   '/research': typeof ResearchRoute
   '/services': typeof ServicesRoute
   '/shield': typeof ShieldRoute
@@ -109,8 +125,10 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
+  '/history': typeof HistoryRoute
   '/internships': typeof InternshipsRoute
   '/memories': typeof MemoriesRoute
+  '/programs': typeof ProgramsRoute
   '/research': typeof ResearchRoute
   '/services': typeof ServicesRoute
   '/shield': typeof ShieldRoute
@@ -124,8 +142,10 @@ export interface FileRouteTypes {
     | '/about'
     | '/careers'
     | '/contact'
+    | '/history'
     | '/internships'
     | '/memories'
+    | '/programs'
     | '/research'
     | '/services'
     | '/shield'
@@ -137,8 +157,10 @@ export interface FileRouteTypes {
     | '/about'
     | '/careers'
     | '/contact'
+    | '/history'
     | '/internships'
     | '/memories'
+    | '/programs'
     | '/research'
     | '/services'
     | '/shield'
@@ -150,8 +172,10 @@ export interface FileRouteTypes {
     | '/about'
     | '/careers'
     | '/contact'
+    | '/history'
     | '/internships'
     | '/memories'
+    | '/programs'
     | '/research'
     | '/services'
     | '/shield'
@@ -164,8 +188,10 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   CareersRoute: typeof CareersRoute
   ContactRoute: typeof ContactRoute
+  HistoryRoute: typeof HistoryRoute
   InternshipsRoute: typeof InternshipsRoute
   MemoriesRoute: typeof MemoriesRoute
+  ProgramsRoute: typeof ProgramsRoute
   ResearchRoute: typeof ResearchRoute
   ServicesRoute: typeof ServicesRoute
   ShieldRoute: typeof ShieldRoute
@@ -210,6 +236,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResearchRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/programs': {
+      id: '/programs'
+      path: '/programs'
+      fullPath: '/programs'
+      preLoaderRoute: typeof ProgramsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/memories': {
       id: '/memories'
       path: '/memories'
@@ -222,6 +255,13 @@ declare module '@tanstack/react-router' {
       path: '/internships'
       fullPath: '/internships'
       preLoaderRoute: typeof InternshipsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/history': {
+      id: '/history'
+      path: '/history'
+      fullPath: '/history'
+      preLoaderRoute: typeof HistoryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -260,8 +300,10 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   CareersRoute: CareersRoute,
   ContactRoute: ContactRoute,
+  HistoryRoute: HistoryRoute,
   InternshipsRoute: InternshipsRoute,
   MemoriesRoute: MemoriesRoute,
+  ProgramsRoute: ProgramsRoute,
   ResearchRoute: ResearchRoute,
   ServicesRoute: ServicesRoute,
   ShieldRoute: ShieldRoute,
